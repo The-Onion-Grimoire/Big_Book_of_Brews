@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="class-list">
+	{% include header.html %}
+
+	<div class="page-content">
+		<div class="wrapper">
+			<h1 class="page-heading">{{page.title}}</h1>
+			<p id="spellSearch" class="search-bar">
+				<span class="fa fa-search icon"></span>
+				<input type="search" class="jetsSearch" id="jetsSearch" placeholder="Search by name">
+			</p>
+			<p id="tagSearch" class="search-bar">
+				<span class="fa fa-search icon"></span>
+				<input type="search" class="jetsSearch" id="tagSearchBar" placeholder="Search by tag">
+			</p>
+			<p id="sourceSearch" class="search-bar">
+				<span class="fa fa-search icon"></span>
+				<input type="search" class="jetsSearch" id="sourceSearchBar" placeholder="Search by source">
+			</p>
+			<dl class="tag-list">
+				<dt>Spell tier:</dt>
+				{% for level in site.data.levels %}
+				<dd>
+					<a href="#{{level.tag}}">{{level.name}}</a>
+				</dd>
+				{% endfor %}
+			</dl>
+
+			{% assign all_spells = site.spells | where: 'tags', page.tag %}
+			{% for level in site.data.levels %}
+			<a id="{{level.tag}}"></a>
+			<h2 class="post-list-head jetsHide">{{level.name}}</h2>
+			{% assign spell_list = all_spells | where: 'tags', level.tag %}
+			<ul class="post-list jetsContent">
+				{% for spell in spell_list %}
+				<li data-tags="{{ spell.tags | join: ',' }}" data-sources="{{ spell.sources | join: ',' }}">
+					<a class="post-link" href="{{ spell.url | prepend: site.baseurl }}">{{ spell.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<a class="post-meta jetsHide" href="#top">Back to top &#8593;</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>

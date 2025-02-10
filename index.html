@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">All Spells</h1>
+  <p id="spellSearch" class="search-bar">
+    <span class="fa fa-search icon"></span>
+    <input type="search" class="jetsSearch" id="jetsSearch" placeholder="Search by name">
+  </p>
+  <p id="tagSearch" class="search-bar">
+    <span class="fa fa-search icon"></span>
+    <input type="search" class="jetsSearch" id="tagSearchBar" placeholder="Search by tag">
+  </p>
+  <p id="sourceSearch" class="search-bar">
+      <span class="fa fa-search icon"></span>
+      <input type="search" class="jetsSearch" id="sourceSearchBar" placeholder="Search by source">
+  </p>
+  <dl class="tag-list">
+    <dt>Spell tier:</dt>
+    {% for level in site.data.levels %}
+    <dd>
+      <a href="#{{level.tag}}">{{level.name}}</a>
+    </dd>
+    {% endfor %}
+  </dl>
+  {% for level in site.data.levels %}
+    <a id="{{level.tag}}"></a>
+    <h2 class="post-list-head jetsHide">{{level.name}}</h2>
+    <ul class="post-list jetsContent">
+      {% assign spell_list = site.spells | where: 'tags', level.tag %}
+      {% for spell in spell_list %}
+        <li data-tags="{{ spell.tags | join: ',' }}" data-sources="{{ spell.sources | join: ',' }}">
+          <a class="post-link" href="{{ spell.url | prepend: site.baseurl }}">{{ spell.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <a class="post-meta jetsHide" href="#top">Back to top &#8593;</a>
+  {% endfor %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
+

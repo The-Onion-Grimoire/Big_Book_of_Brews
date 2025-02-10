@@ -1,0 +1,78 @@
+- name: Ritual
+  tag: ritual
+  help: This spell can be cast as a ritual if you have the Ritual Casting feature.
+- name: Concentration
+  tag: concentration
+  help: This spell requires you to maintain your concentration.
+- name: Action
+  tag: action
+  help: This spell uses your Action.
+- name: Bonus Action
+  tag: bonus-action
+  help: This spell uses your Bonus Action.
+- name: Reaction
+  tag: reaction
+  help: This spell uses your Reaction.
+- name: Long Casting Time
+  tag: long
+  help: This spell has a casting time greater than one round.  
+- name: Area of Effect
+  tag: aoe
+  help: This spell can effect multiple targets.
+- name: Buff
+  tag: buff
+  help: This spell bestows a positive status effect on the target.
+- name: Debuff 
+  tag: debuff
+  help: This spell bestows a negative status effect on the target.
+- name: Crowd Control
+  tag: crowd-control
+  help: This spell restricts the movement and or action count of the target.
+- name: Single Target
+  tag: single-target
+  help: This spell targets only one creature. 
+- name: Acid
+  tag: acid
+  help: This spell deals acid damage.
+- name: Bludgeoning
+  tag: bludgeoning
+  help: This spell deals bludgeoning damage.
+- name: Cold
+  tag: cold
+  help: This spell deals  damage.
+- name: Fire
+  tag: fire
+  help: This spell deals fire damage.
+- name: Force
+  tag: force
+  help: This spell deals force damage. This is a pure magical damage type.
+- name: Lightning
+  tag: lightning
+  help: This spell deals lightning damage.
+- name: Necrotic
+  tag: necrotic
+  help: This spell deals necrotic damage.
+- name: Piercing
+  tag: piercing
+  help: This spell deals piercing damage.
+- name: Poison
+  tag: poison
+  help: This spell deals poison damage.
+- name: Psychic
+  tag: psychic
+  help: This spell deals psychic damage.
+- name: Radiant
+  tag: radiant
+  help: This spell deals radiant damage.
+- name: Slashing
+  tag: slashing
+  help: This spell deals slashing damage.
+- name: Thunder
+  tag: thunder
+  help: This spell deals thunder damage. This is a sonic damage type.
+- name: Healing
+  tag: healing
+  help: This spell heals its targets.
+- name: Temporary Hp
+  tag: temporary-hp
+  help: This spell grants temporary hit point to the targets.
