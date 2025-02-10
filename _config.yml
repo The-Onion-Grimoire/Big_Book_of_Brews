@@ -4,7 +4,7 @@ author: "Saph, thebombzen, Desamir"
 description:
   "A searchable D&D 5e spell list."
 baseurl: "/Big_Book_of_Brews" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "https://Big_Book_of_Brews.github.io" # the base hostname & protocol for your site
 source-url: "https://github.com/The-Onion-Grimoire/Big_Book_of_Brews/"
 permalink: "/:categories/:title"
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
